@@ -19,9 +19,9 @@ jobs:
             tar -xz -C /tmp -f /tmp/docker-$VER.tgz
             mv /tmp/docker/* /usr/bin
       - run: |
-            docker build -t me-ventures/angular-cli:$TAG .
+            docker build -t meventures/angular-cli:$TAG .
       - deploy:
           name: Deploy
           command: |
               docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
-              docker push me-ventures/angular-cli:$TAG
+              docker push meventures/angular-cli:$TAG
