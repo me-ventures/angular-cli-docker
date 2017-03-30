@@ -2,7 +2,7 @@ version: 2
 jobs:
  build:
     docker:
-      - image: node:6.10.1-alpine
+      - image: node:6.10.1
     working_directory: /app
     parallelism: 1
     environment:
