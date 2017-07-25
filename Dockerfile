@@ -17,6 +17,7 @@ RUN npm install npm@5.3.0 -g
 # install angular-cli as "node" user with some permissions
 RUN chown -R node:node /usr/local/lib/node_modules
 RUN chown -R node:node /usr/local/bin
+RUN chown -R node:node /usr/bin
 RUN chown node:node /root/google-cloud-sdk/bin/gcloud
 RUN mkdir /app && chown node:node /app
 USER node
