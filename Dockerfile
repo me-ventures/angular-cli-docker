@@ -1,6 +1,6 @@
-FROM node:6.11.1-alpine
+FROM node:6.11.1
 
-RUN apk update && apk add bash curl python git openssh
+RUN apt-get update && apt-get install -y bash curl python git
 
 # gcloud
 RUN curl https://sdk.cloud.google.com | bash
