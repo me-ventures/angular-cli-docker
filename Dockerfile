@@ -5,14 +5,6 @@ RUN apt-get update && apt-get install -y bash curl python git apt-transport-http
 # gcloud
 RUN curl https://sdk.cloud.google.com | bash
 
-# install npm 5.3.0
-# Fix bug https://github.com/npm/npm/issues/9863
-RUN cd $(npm root -g)/npm \
-  && npm install fs-extra \
-  && sed -i -e s/graceful-fs/fs-extra/ -e s/fs\.rename/fs.move/ ./lib/utils/rename.js
-
-RUN npm install npm@5.3.0 -g
-
 # Install YARN
 RUN curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add - && echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.list.d/yarn.list
 RUN apt-get update && apt-get install -y yarn
