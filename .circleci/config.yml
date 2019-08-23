@@ -6,7 +6,7 @@ jobs:
     working_directory: /app
     parallelism: 1
     environment:
-      TAG=3.1.0
+      TAG=4.0.0
     steps:
       - checkout
       - setup_remote_docker
